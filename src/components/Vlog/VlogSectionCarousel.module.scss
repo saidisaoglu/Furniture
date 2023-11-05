@@ -1,0 +1,16 @@
+.Carousel {
+  display: flex;
+  height: 88vh;
+  position: relative;
+  overflow: hidden;
+  .videoPlayButton {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+}

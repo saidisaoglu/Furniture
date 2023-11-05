@@ -1,0 +1,5 @@
+@mixin responsive1704 {
+  @media (max-width: 1704px) {
+    @content;
+  }
+}

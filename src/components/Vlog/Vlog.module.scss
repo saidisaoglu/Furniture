@@ -1,0 +1,33 @@
+@import "../../Scss/Color/colors";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.VlogSection {
+  text-align: center;
+  max-height: 100vh;
+
+  .VlogSectionHeader {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    h2 {
+      font-size: 1.5rem;
+      background: $pageName-color;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: normal;
+      line-height: 2rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    img {
+      width: 17%;
+    }
+  }
+}
