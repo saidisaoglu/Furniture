@@ -1,62 +1,41 @@
-import { useRef, useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import VlogCarouselSectionScss from "./VlogSectionCarousel.module.scss";
-import playButtonimg from "../../Images/VlogCompImg/playButton.png";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 
-function VlogSectionCarousel() {
-  const [index, setIndex] = useState(0);
-  const iframeRef = useRef(null);
+import { Pagination } from "swiper/modules";
+import carouselImg1 from "../../Images/VlogCompImg/carouselItemimg1.png";
+import VlogSectionCarouselScss from "../Vlog/VlogSectionCarousel.module.scss";
+import thumbNail from "../../Images/VlogCompImg/thumbNail.png";
 
-  const playVideo = () => {
-    iframeRef.current.contentWindow.postMessage(
-      '{"event":"command","func":"playVideo","args":""}',
-      "*"
-    );
-  };
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
+export default function VlogSectionCarousel() {
   return (
-    <Carousel
-      activeIndex={index}
-      onSelect={handleSelect}
-      controls={false}
-      className={VlogCarouselSectionScss.Carousel}
-    >
-      <Carousel.Item className="w-100 h-100">
-        <div className="w-100 h-100">
-          <iframe
-            ref={iframeRef}
-            className="w-100 h-100"
-            src="https://www.youtube.com/embed/0Ha6YYJ-_fk?si=ELIrR0dDAKziJ311"
-            // allowfullscreen
-          ></iframe>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item className="w-100 h-100">
-        <div className="w-100 h-100">
-          <iframe
-            className="w-100 h-100"
-            src="https://www.youtube.com/embed/Zz59xFAvMDY?si=uxHiL_bMnQiyOjUZ"
-            title="YouTube video player"
-            // allowfullscreen
-          ></iframe>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item className="w-100 h-100 object-fit-cover">
-        <div className="w-100 h-100 object-fit-cover">
-          <iframe
-            className="w-100 h-100"
-            src="https://www.youtube.com/embed/_yJvIbU9_gc?si=n7jG5TjnLX1LB5HA"
-            title="YouTube video player"
-            // allowfullscreen
-          ></iframe>
-        </div>
-      </Carousel.Item>
-    </Carousel>
+    <>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={20}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className={VlogSectionCarouselScss.vlogSwiper}
+      >
+        <SwiperSlide className={VlogSectionCarouselScss.vlogSwiperItem}>
+          <img src={carouselImg1} alt="Carousel Item 1" />
+        </SwiperSlide>
+        <SwiperSlide className={VlogSectionCarouselScss.vlogSwiperItem}>
+          <img src={carouselImg1} alt="Carousel Item 1" />
+        </SwiperSlide>
+        <SwiperSlide className={VlogSectionCarouselScss.vlogSwiperItem}>
+          <img src={carouselImg1} alt="Carousel Item 1" />
+        </SwiperSlide>
+        <SwiperSlide className={VlogSectionCarouselScss.vlogSwiperItem}>
+          <img src={carouselImg1} alt="Carousel Item 1" />
+        </SwiperSlide>
+        <SwiperSlide className={VlogSectionCarouselScss.vlogSwiperItem}>
+          <img src={carouselImg1} alt="Carousel Item 1" />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
-
-export default VlogSectionCarousel;

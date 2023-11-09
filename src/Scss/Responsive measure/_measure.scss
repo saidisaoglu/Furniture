@@ -3,3 +3,28 @@
     @content;
   }
 }
+@mixin responsive1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin responsive1048 {
+  @media (max-width: 1180px) {
+    @content;
+  }
+}
+@mixin responsive992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin responsive580 {
+  @media (max-width: 580px) {
+    @content;
+  }
+}
+@mixin responsive374 {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
